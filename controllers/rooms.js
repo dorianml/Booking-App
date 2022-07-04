@@ -12,7 +12,7 @@ exports.GetAllRooms = async (req, res) => {
 // Get One Room
 exports.GetOneRoom = async (req, res) => {
     try {
-        const getOneRoom = await Rooms.find({ id: req.params._id })
+        const getOneRoom = await Rooms.find({ _id: req.params._id })
         res.json(getOneRoom)
       } catch {
         res.sendStatus()
@@ -41,7 +41,7 @@ exports.UpdateRoom = async (req, res) => {
     try {
         const updatedRoom = await Rooms.findOneAndUpdate(
             { _id: req.params._id},
-            { _id: req.body._id}
+            { name: req.body.name}
         );
         res.json(updatedRoom)
         updatedRoom.save()
@@ -53,10 +53,11 @@ exports.UpdateRoom = async (req, res) => {
 // Delete Room
 exports.DeleteRoom = async (req, res) => {
     try {
-        const deletedRoom = await Rooms.findOneAndDelete({ _id: req.params._id})
-        res.send(`Room ${deletedRoom.name} deleted`)
+        await Rooms.findOneAndDelete({ _id: req.params._id})
+        res.send(`Room deleted`)
     } catch {
-        res.sendStatus()
+        console.log('Error Deleting')
+        res.sendStatus(404)
     }
 }
 
