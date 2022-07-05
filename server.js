@@ -16,6 +16,8 @@ const mongoose = require('mongoose')
 // Routes
 const rooms = require('./routes/rooms.js')
 app.use('/rooms', rooms)
+const users = require('./routes/users.js')
+app.use('/users', users)
 
 // App Listen
 app.listen(port, () => {
@@ -28,3 +30,4 @@ app.listen(port, () => {
     console.log("//Problem Mongo")
   })                                            
 })
+

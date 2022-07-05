@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 //MUI IMPORTS ///
@@ -9,30 +9,34 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-
-
-/// USE PARAMS ////
-
-
 export default function RoomDetail() {
-    
     
     let params = useParams()
     let roomId = params.id 
+    console.log(params)
 
-    const [roomDetail, setRoomDetail] = useState([])
+    const [roomDetail, setRoomDetail] = useState({})
 
-      // TODO: CHANGER L'URL DU FETCH PAR LA BASE DE DONNEE MONGO
-    fetch('https://jsonplaceholder.typicode.com/posts/{roomId}')
-    .then((response) => {
-        console.log('API CONNECTED')
-        return response.json()
-    })
-    .then((result) =>{  
-        setRoomDetail(result)
-        console.log('SET API UPDATE')
-        return result
-    })
+    const getRoom = () => {
+      fetch(`http://localhost:5000/rooms/${roomId}`)
+      .then((response) => {
+          console.log('API CONNECTED')
+          return response.json()
+      })
+      .then((result) =>{  
+          setRoomDetail(result[0])
+          console.log('SET API UPDATE')
+          console.log(result)
+      })
+    }
+
+    useEffect(() => {
+      getRoom()
+    }, [])
+
+    useEffect(() => {
+      console.log(`OK` + roomDetail);
+    }, [roomDetail])
 
     return (
 
@@ -41,28 +45,28 @@ export default function RoomDetail() {
         component="img"
         alt="green iguana"
         height="140"
-        image="https://lockacademy.com/wp-content/uploads/2020/07/tres-cher-lock-escape-game-lock-academy.jpg"
+        image={roomDetail.photo} 
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {roomDetail.name} TITRE
+          {roomDetail.name} 
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        {roomDetail.description} DESCR
+          {roomDetail.description} 
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        {roomDetail.price} Prix: 200$
+          Price: {roomDetail.price} $
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        {roomDetail.capacity} Capacity: 5/7 personnes
+          Capacity: {roomDetail.capacity} personnes
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        {roomDetail.capacity} Age Limit: 18 ans
+          Age Limit: {roomDetail.ageMin} ans
         </Typography>
-        //TODO: SELECT BOX ou CALENDER pour choisir le créneau 
+        {/* //TODO: SELECT BOX ou CALENDER pour choisir le créneau  */}
       </CardContent>
       <CardActions>
-
+      
       <Link to={{
         pathname: `/reservation/${roomDetail._id}`
       }} >

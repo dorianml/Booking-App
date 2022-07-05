@@ -40,11 +40,14 @@ exports.PostNewRoom = (req, res) => {
 exports.UpdateRoom = async (req, res) => {
     try {
         const updatedRoom = await Rooms.findOneAndUpdate(
-            { _id: req.params._id},
-            { name: req.body.name}
+            { _id: req.params._id },
+            { name: req.body.name ,
+            description: req.body.description ,
+            ageMin: req.body.ageMin ,
+            capacity: req.body.capacity ,
+            price: req.body.price ,
+            photo: req.body.photo},
         );
-        res.json(updatedRoom)
-        updatedRoom.save()
         res.send("Room Updated");
     } catch {
         res.sendStatus()

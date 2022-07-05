@@ -7,7 +7,7 @@ const Header = () => {
 
             <div className='home-logo'>
                 <Link to="/"> 
-                    HOME
+                    <img className='logoHome' src="https://upload.wikimedia.org/wikipedia/commons/5/54/Logo-escapegame-blanc.png" />
                 </Link>
             </div>
 
@@ -21,7 +21,7 @@ const Header = () => {
                     </Link>
                 </div>
                 <div>
-                    <Link to="/connection">
+                    <Link to="/connexion">
                         <button className='button-connection'>Connection</button>
                     </Link>
                 </div>

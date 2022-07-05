@@ -10,31 +10,33 @@ import Typography from '@mui/material/Typography';
 
 export default function RoomCard(props) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 400 }}>
       <CardMedia
         component="img"
-        alt="green iguana"
+        alt="escape preview"
         height="140"
-        image="https://lockacademy.com/wp-content/uploads/2020/07/tres-cher-lock-escape-game-lock-academy.jpg"
+        image={props.room.photo}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {props.room.name} TITRE
+          {props.room.name} 
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        {props.room.description} DESCR
+        {props.room.price} $
         </Typography>
       </CardContent>
       <CardActions>
       <Link to={{
-          pathname: `/room/${props.room._id}`
+        // LINKS TO RoomDetail Component
+          pathname: `/rooms/${props.room._id}`
       }} >
-        <Button size="small"> + infos</Button>
+        <Button color='secondary' size="small"> + infos</Button>
       </Link>
       <Link to={{
+        // Link to ReserationPage Component
          pathname: `/reservation/${props.room._id}`
          }} >
-        <Button size="small"> Reserver</Button>
+        <Button color='secondary' size="small"> Reserver</Button>
       </Link>
       </CardActions>
     </Card>
