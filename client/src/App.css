@@ -4,13 +4,7 @@
   background-color: rgb(8, 7, 7);
 }
 
-body {
-  background-color: rgb(8, 7, 7);
-}
 
-.form-example {
-  color: white;
-}
 
 .MuiGrid-root {
   text-align: center;
@@ -23,6 +17,10 @@ body {
 
 .logoHome {
   width: 130px;
+}
+
+#demo-simple-select-standard {
+  width: 100px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

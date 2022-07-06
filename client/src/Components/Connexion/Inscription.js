@@ -51,7 +51,7 @@ return (
       </div>
       <div className="form-example">
         <label >Email: </label>
-        <input type="email" name="email" id="email" required onChange={(e)=>updateForm({emal: e.target.value})} /> 
+        <input type="email" name="email" id="email" required onChange={(e)=>updateForm({email: e.target.value})} /> 
       </div>
       <div className="form-example">
         <label >Password: </label>

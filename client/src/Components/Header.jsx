@@ -7,7 +7,7 @@ const Header = () => {
 
             <div className='home-logo'>
                 <Link to="/"> 
-                    <img className='logoHome' src="https://upload.wikimedia.org/wikipedia/commons/5/54/Logo-escapegame-blanc.png" />
+                    <img className='logoHome' src="https://escapegamers.fr/wp-content/uploads/2017/09/Logo_Final_Vert_rectangle.png" />
                 </Link>
             </div>
 
