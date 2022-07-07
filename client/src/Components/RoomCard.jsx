@@ -7,6 +7,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+
 
 export default function RoomCard(props) {
   return (
@@ -36,6 +38,7 @@ export default function RoomCard(props) {
         // Link to ReserationPage Component
          pathname: `/reservation/${props.room._id}`
          }} >
+                  
         <Button color='secondary' size="small"> Reserver</Button>
       </Link>
       </CardActions>

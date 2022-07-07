@@ -8,6 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
 
 export default function RoomDetail() {
     
@@ -66,18 +67,22 @@ export default function RoomDetail() {
         {/* //TODO: SELECT BOX ou CALENDER pour choisir le créneau  */}
       </CardContent>
       <CardActions>
-      
+     
       <Link to={{
         pathname: `/reservation/${roomDetail._id}`
       }} >
-        <Button size="small"> Reserver</Button>
+             <Button variant="contained" size="small">Reserver</Button>
       </Link>
       <Link to={{
         pathname: `/`
       }} >
         <Button size="small"> Retour</Button>
       </Link>
-      
+      <Stack spacing={2} direction="row">
+        
+   
+        {/* <Button variant="outlined" size="small">Outlined</Button> */}
+      </Stack>
       </CardActions>
     </Card>
   );
