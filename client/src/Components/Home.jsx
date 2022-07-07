@@ -26,6 +26,8 @@ const Home = () => {
         }, [])
 
     return (
+        <>
+        <h2 className='titleHome'> Toutes nos salles de jeu</h2>
         <Grid className='HomeGridHome' container spacing={0} margin-bottom={40}>
                 {rooms.map((room) => {
                     return(
@@ -35,6 +37,8 @@ const Home = () => {
                     )
                 })}
          </Grid>
+         </>
+        
     )
 }
 

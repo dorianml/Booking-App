@@ -1,6 +1,15 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+
+
 const Header = () => {
     return (
         <div className='navbar'>
@@ -13,21 +22,20 @@ const Header = () => {
 
             <div className='nav-log-section'>
                 <div>
-                     <p> Welcome UserX </p>
+                     <p> </p>
                 </div>
                 <div>
-                    <Link to="/UserReservations">
-                        <button className='button-inscription'>Mes réservations</button>
+                    <Link className='button-navbar' to="/inscription">
+                    <Button sx={{ color: '#81c784'}} variant="outlined">
+                       Inscritption
+                      </Button>
                     </Link>
                 </div>
                 <div>
-                    <Link to="/connexion">
-                        <button className='button-connection'>Connection</button>
-                    </Link>
-                </div>
-                <div>
-                    <Link to="/inscription">
-                        <button className='button-inscription'>Inscription</button>
+                    <Link className='button-navbar' to="/connexion">
+                        <Button  variant="contained">
+                       Connexion
+                      </Button>
                     </Link>
                 </div>
             </div>

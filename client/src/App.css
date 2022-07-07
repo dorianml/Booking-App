@@ -71,6 +71,11 @@
   color: white;
 }
 
+.navbar img{
+padding-top: 28px;
+padding-left: 10px;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -81,6 +86,84 @@
 
 .reservationImage img {
   width: 300px
+}
+
+.allSlotsDisplay {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.SlotDisplay {
+  display: flex;
+  flex-direction: row;
+}
+
+.titleHome {
+  color: #11f88c;
+  margin-left: 32px;
+  margin-bottom: -20px;
+}
+
+.ticketReservation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+
+.titleReservation {
+  color: #11f88c;
+  text-align: center;
+  margin-left: 32px;
+  margin-bottom: -20px;
+}
+
+.titleBox{
+  border: 4px;
+  color: #11f88c;
+  border-radius: 2px;
+}
+
+.iconeButton {
+  size: 20px;
+  text-decoration: none;
+}
+
+.button-navbar{
+  text-decoration: none;
+}
+
+.RoomDetail{
+  text-align: center;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 12px;
+}
+.logoFooter {
+  margin: auto;
+  width: 60px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+@media (max-width: 845px) { 
+  .ticketReservation {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @keyframes App-logo-spin {
   from {

@@ -23,24 +23,15 @@ export default function RoomCard(props) {
         <Typography gutterBottom variant="h5" component="div">
           {props.room.name} 
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-        {props.room.price} $
-        </Typography>
       </CardContent>
       <CardActions>
-      <Link to={{
+      <Link className='iconeButton' to={{
         // LINKS TO RoomDetail Component
           pathname: `/rooms/${props.room._id}`
       }} >
-        <Button color='secondary' size="small"> + infos</Button>
+        <Button  color='primary' size="small"> + infos </Button>
       </Link>
-      <Link to={{
-        // Link to ReserationPage Component
-         pathname: `/reservation/${props.room._id}`
-         }} >
-                  
-        <Button color='secondary' size="small"> Reserver</Button>
-      </Link>
+
       </CardActions>
     </Card>
   );
